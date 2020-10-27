@@ -1,7 +1,7 @@
 {
     "name": "horde/mnemo",
     "description": "Notes application",
-    "type": "project",
+    "type": "horde-application",
     "homepage": "https://www.horde.org/apps/mnemo",
     "license": "ASL",
     "authors": [
@@ -17,50 +17,53 @@
         }
     ],
     "version": "5.0.0",
-    "time": "2017-11-11",
+    "time": "2020-10-27",
     "repositories": [
         {
-            "type": "pear",
-            "url": "https://pear.horde.org"
+            "type": "composer",
+            "url": "https://horde-satis.maintaina.com"
         }
     ],
     "require": {
+        "horde/horde-installer-plugin": "dev-master",
         "php": "^5.3 || ^7",
-        "pear-pear.horde.org/content": "^2.0.5",
-        "pear-pear.horde.org/horde": "^5",
-        "pear-pear.horde.org/Horde_Auth": "^2",
-        "pear-pear.horde.org/Horde_Core": "^2.31",
-        "pear-pear.horde.org/Horde_Data": "^2",
-        "pear-pear.horde.org/Horde_Exception": "^2",
-        "pear-pear.horde.org/Horde_Form": "^2",
-        "pear-pear.horde.org/Horde_Group": "^2",
-        "pear-pear.horde.org/Horde_History": "^2.1",
-        "pear-pear.horde.org/Horde_Icalendar": "^2",
-        "pear-pear.horde.org/Horde_Injector": "^2",
-        "pear-pear.horde.org/Horde_Perms": "^2",
-        "pear-pear.horde.org/Horde_Prefs": "^2",
-        "pear-pear.horde.org/Horde_Share": "^2.2",
-        "pear-pear.horde.org/Horde_Support": "^2",
-        "pear-pear.horde.org/Horde_Text_Filter": "^2",
-        "pear-pear.horde.org/Horde_Util": "^2",
+        "horde/content": "dev-master",
+        "horde/horde": "dev-master",
+        "horde/auth": "dev-master",
+        "horde/core": "dev-master",
+        "horde/data": "dev-master",
+        "horde/exception": "dev-master",
+        "horde/form": "dev-master",
+        "horde/group": "dev-master",
+        "horde/history": "dev-master",
+        "horde/icalendar": "dev-master",
+        "horde/injector": "dev-master",
+        "horde/perms": "dev-master",
+        "horde/prefs": "dev-master",
+        "horde/share": "dev-master",
+        "horde/support": "dev-master",
+        "horde/text_filter": "dev-master",
+        "horde/util": "dev-master",
         "ext-gettext": "*"
     },
     "suggest": {
-        "pear-pear.horde.org/Horde_ActiveSync": "^2.4",
-        "pear-pear.horde.org/Horde_Backup": "^1",
-        "pear-pear.horde.org/Horde_Cli": "^2",
-        "pear-pear.horde.org/Horde_Crypt": "^2",
-        "pear-pear.horde.org/Horde_Db": "^2.1",
-        "pear-pear.horde.org/Horde_Pdf": "^2",
-        "pear-pear.horde.org/Horde_Test": "^2"
-    },
-    "replace": {
-        "pear-pear.horde.org/mnemo": "5.*",
-        "pear-horde/mnemo": "5.*"
+        "horde/activesync": "^2.4",
+        "horde/backup": "^1",
+        "horde/cli": "^2",
+        "horde/crypt": "^2",
+        "horde/db": "^2.1",
+        "horde/pdf": "^2",
+        "horde/test": "^2"
     },
     "autoload": {
         "psr-0": {
             "Mnemo": "lib/"
         }
-    }
+    },
+    "bin": [
+        "bin/mnemo-convert-to-utf8",
+        "bin/mnemo-convert-sql-shares-to-sqlng",
+        "bin/mnemo-import-text-note",
+        "bin/mnemo-convert-datatree-shares-to-sql"
+    ]
 }
